@@ -7,7 +7,6 @@
   <meta name="author" content="Charity Water Gen Z Team" />
   <meta name="keywords" content="clean water, Gen Z, charity, nonprofit, donation, water crisis">
   <title>Gen Z Water Campaign</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     :root {
       --jerry-yellow: #ffc907;
@@ -49,7 +48,7 @@
     }
 
     header.hero {
-      background: url('https://i.imgur.com/4AiXzf8.jpeg') center/cover no-repeat;
+      background: url('images/heroimage.jpg') center/cover no-repeat;
       background-color: var(--sky-blue);
       background-blend-mode: overlay;
       color: var(--charcoal);
@@ -162,19 +161,10 @@
     }
 
     @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-      .hero-content {
-        padding: 1.5rem;
-      }
-      .impact-cards {
-        flex-direction: column;
-        align-items: center;
-      }
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+      .hero-content { padding: 1.5rem; }
+      .impact-cards { flex-direction: column; align-items: center; }
     }
   </style>
 </head>
@@ -195,51 +185,13 @@
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Our Mission</h2>
-    <p>We believe clean water is a basic human right. The Gen Z Water Campaign unites students across the world to fund sustainable water projects in underserved communities. Every dollar raised brings us closer to health, education, and hope for all.</p>
-  </section>
-
-  <section id="impact">
-    <h2>Our Global Impact</h2>
-    <div class="impact-cards">
-      <div class="card">
-        <h3>150+ Projects Funded</h3>
-        <p>Across Africa, Asia, and Latin America.</p>
-      </div>
-      <div class="card">
-        <h3>50,000+ Lives Changed</h3>
-        <p>Through access to safe drinking water.</p>
-      </div>
-      <div class="card">
-        <h3>100+ Gen Z Teams</h3>
-        <p>Mobilized on campuses worldwide.</p>
-      </div>
+  <section id="gallery">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Our Work in Action</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+      <img src="images/heroimage.jpg" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <img src="images/heroimage1.jpg" alt="Youth engaging in water project" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <img src="images/heroimage4.jpg" alt="Celebrating clean water access" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
     </div>
-  </section>
-
-  <section id="donate">
-    <h2>Make a Difference Today</h2>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="amount">Donation Amount ($)</label>
-      <input type="number" id="amount" name="amount" required min="1" step="any">
-
-      <label for="message">Leave a Message (optional)</label>
-      <textarea id="message" name="message" rows="4"></textarea>
-
-      <button type="submit">Donate Now</button>
-    </form>
-  </section>
-
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p style="text-align:center; max-width:600px; margin:auto;">Have a question or want to get your school involved? Email us at <a href="mailto:info@genzwater.org">info@genzwater.org</a> and follow us on social media to join the movement.</p>
   </section>
 
   <footer>
@@ -247,3 +199,4 @@
   </footer>
 </body>
 </html>
+
