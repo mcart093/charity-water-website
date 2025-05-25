@@ -48,7 +48,7 @@
     }
 
     header.hero {
-      background: url('images/heroimage.jpg') center/cover no-repeat;
+      background: url('images/ChatGPT Image May 19, 2025 at 07_23_21 PM.png') center/cover no-repeat;
       background-color: var(--sky-blue);
       background-blend-mode: overlay;
       color: var(--charcoal);
@@ -188,7 +188,7 @@
   <section id="gallery">
     <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Our Work in Action</h2>
     <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-      <img src="images/heroimage.jpg" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <img src="images/ChatGPT Image May 19, 2025 at 07_23_21 PM.png" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
       <img src="images/heroimage1.jpg" alt="Youth engaging in water project" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
       <img src="images/heroimage4.jpg" alt="Celebrating clean water access" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
     </div>
@@ -199,23 +199,5 @@
   </footer>
 </body>
 </html>
-<header class="hero" id="home">
-  <div class="hero-content">
-    <h1>Gen Z Leads, Clean Water Succeeds.</h1>
-    <p>Clean water heals, protects, and grows. Gen Z makes sure it flows.</p>
-    <a href="#donate" class="cta-button">Join Gen Z's Fight for Water Now!</a>
-  </div>
-</header>
 
-<!-- Update this part of your CSS inside <style> -->
-<style>
-  header.hero {
-    background: url('images/ChatGPT Image May 19, 2025 at 07_23_21 PM.png') center/cover no-repeat;
-    background-color: var(--sky-blue);
-    background-blend-mode: overlay;
-    color: var(--charcoal);
-    text-align: center;
-    padding: 5rem 2rem;
-  }
-</style>
 
