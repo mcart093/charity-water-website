@@ -35,16 +35,33 @@
       top: 0;
       background-color: var(--clean-white);
       display: flex;
-      justify-content: space-around;
-      padding: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
       border-bottom: 1px solid #ccc;
       z-index: 999;
     }
 
-    nav a {
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-left img {
+      height: 40px;
+    }
+
+    .nav-left span {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .nav-links a {
       color: var(--charcoal);
       text-decoration: none;
       font-weight: bold;
+      margin-left: 1rem;
     }
 
     header.hero {
@@ -161,6 +178,18 @@
     }
 
     @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
       h1 { font-size: 1.8rem; }
       p { font-size: 1rem; }
       .hero-content { padding: 1.5rem; }
@@ -170,11 +199,17 @@
 </head>
 <body>
   <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#impact">Impact</a>
-    <a href="#donate">Donate</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-left">
+      <img src="images/logoimage.jpg" alt="Charity Water Logo">
+      <span>Gen Z Water</span>
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <a href="#donate">Donate</a>
+      <a href="#contact">Contact</a>
+    </div>
   </nav>
 
   <header class="hero" id="home">
@@ -199,6 +234,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
