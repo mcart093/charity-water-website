@@ -1,4 +1,3 @@
-<!-- FULL CODE STARTS HERE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -267,6 +266,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
