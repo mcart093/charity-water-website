@@ -27,8 +27,9 @@
       line-height: 1.6;
     }
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       background-color: var(--clean-white);
       display: flex;
       justify-content: space-between;
@@ -52,12 +53,15 @@
       background: url('images/heroimage5.jpg') center/cover no-repeat;
       color: var(--charcoal);
       text-align: center;
-      padding: 5rem 2rem;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
       border-bottom: 5px solid var(--hope-blue);
     }
     .hero-content {
       background: rgba(255, 255, 255, 0.9);
-      display: inline-block;
       padding: 2rem;
       border-radius: 1rem;
       max-width: 600px;
@@ -222,7 +226,7 @@
 
   <section id="video" class="video-section">
     <h2>Watch Our Mission in Action</h2>
-    <iframe src="https://www.youtube.com/embed/dxWzW5Pp0m8" title="Gen Z Water Campaign Video" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/bdBG5VO01e0?autoplay=1&mute=1" title="Gen Z Water Campaign Video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </section>
 
   <section id="impact">
@@ -271,14 +275,14 @@
   </footer>
 
   <script>
-    const counters = document.querySelectorAll('.counter');
-    const speed = 200;
+    const counterElements = document.querySelectorAll('.counter');
+    const animationSpeed = 200;
 
-    counters.forEach(counter => {
+    counterElements.forEach(counter => {
       const updateCount = () => {
         const target = +counter.getAttribute('data-target');
         const count = +counter.innerText;
-        const inc = target / speed;
+        const inc = target / animationSpeed;
 
         if (count < target) {
           counter.innerText = Math.ceil(count + inc);
@@ -292,5 +296,6 @@
   </script>
 </body>
 </html>
+
 
 
