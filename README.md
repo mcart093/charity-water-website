@@ -52,11 +52,6 @@
       height: 40px;
     }
 
-    .nav-left span {
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
     .nav-links a {
       color: var(--charcoal);
       text-decoration: none;
@@ -65,8 +60,7 @@
     }
 
     header.hero {
-      background: url('images/heroimage5.jpg') center/cover no-repeat;
-      background-color: var(--sky-blue);
+      background: url('images/heroimage5.jpg') center/cover no-repeat, url('images/background-overlay.jpg') center/cover no-repeat;
       background-blend-mode: overlay;
       color: var(--charcoal);
       text-align: center;
@@ -201,7 +195,6 @@
   <nav>
     <div class="nav-left">
       <img src="images/logoimage.jpg" alt="Charity Water Logo">
-      <span>Gen Z Water</span>
     </div>
     <div class="nav-links">
       <a href="#home">Home</a>
@@ -234,6 +227,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
