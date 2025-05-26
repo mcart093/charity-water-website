@@ -18,13 +18,8 @@
       --charcoal: #333333;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -46,9 +41,7 @@
       z-index: 999;
     }
 
-    .nav-left img {
-      height: 40px;
-    }
+    .nav-left img { height: 40px; }
 
     .nav-links a {
       color: var(--charcoal);
@@ -58,7 +51,8 @@
     }
 
     header.hero {
-      background: url('images/heroimage5.jpg') center/cover no-repeat, url('images/background-overlay.jpg') center/cover no-repeat;
+      background: url('images/heroimage5.jpg') center/cover no-repeat;
+      background-color: var(--sky-blue);
       background-blend-mode: overlay;
       color: var(--charcoal);
       text-align: center;
@@ -85,17 +79,9 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    h1, h2 {
-      font-size: 2.5rem;
-    }
-
-    h3 {
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-    }
+    h1, h2 { font-size: 2.5rem; }
+    h3 { font-size: 1.8rem; }
+    p { font-size: 1.2rem; }
 
     .cta-button {
       background-color: var(--jerry-yellow);
@@ -109,9 +95,7 @@
       transition: background 0.3s;
     }
 
-    .cta-button:hover {
-      background-color: #e6b800;
-    }
+    .cta-button:hover { background-color: #e6b800; }
 
     section {
       padding: 4rem 2rem;
@@ -135,9 +119,7 @@
       transition: transform 0.3s;
     }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+    .card:hover { transform: translateY(-5px); }
 
     form {
       max-width: 600px;
@@ -180,9 +162,7 @@
       transition: background 0.3s;
     }
 
-    form button:hover {
-      background-color: #e6b800;
-    }
+    form button:hover { background-color: #e6b800; }
 
     footer {
       text-align: center;
@@ -244,7 +224,7 @@
 
   <section id="donate">
     <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Make a Donation</h2>
-    <form>
+    <form onsubmit="event.preventDefault(); alert('Thank you for your donation!');">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Your Name" required />
 
@@ -266,4 +246,5 @@
   </footer>
 </body>
 </html>
+
 
