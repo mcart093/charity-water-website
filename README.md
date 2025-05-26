@@ -1,3 +1,4 @@
+<!-- FULL CODE STARTS HERE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,12 +45,6 @@
       padding: 1rem 2rem;
       border-bottom: 1px solid #ccc;
       z-index: 999;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
     }
 
     .nav-left img {
@@ -272,6 +267,8 @@
   </footer>
 </body>
 </html>
+<!-- FULL CODE ENDS HERE -->
+
 
 
 
