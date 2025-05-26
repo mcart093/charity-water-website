@@ -163,9 +163,14 @@
     form input, form textarea {
       width: 100%;
       padding: 0.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
       border: 1px solid #ccc;
       border-radius: 0.5rem;
+    }
+
+    form input[type="email"] {
+      background-color: #f9fbff;
+      border: 1px solid var(--hope-blue);
     }
 
     form button {
@@ -267,6 +272,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
