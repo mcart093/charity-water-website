@@ -18,6 +18,10 @@
       --charcoal: #333333;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -65,6 +69,12 @@
       color: var(--charcoal);
       text-align: center;
       padding: 5rem 2rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     .hero-content {
@@ -73,6 +83,12 @@
       padding: 2rem;
       border-radius: 1rem;
       max-width: 600px;
+      animation: slideUp 2s ease-in-out;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     h1, h2 {
@@ -122,11 +138,16 @@
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       max-width: 300px;
       text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     form {
       max-width: 600px;
-      margin: 0 auto;
+      margin: 2rem auto;
       background: var(--clean-white);
       padding: 2rem;
       border-radius: 1rem;
@@ -222,11 +243,31 @@
     </div>
   </section>
 
+  <section id="donate">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Make a Donation</h2>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
+
+      <label for="amount">Donation Amount ($)</label>
+      <input type="number" id="amount" name="amount" placeholder="e.g. 50" required />
+
+      <label for="message">Message (Optional)</label>
+      <textarea id="message" name="message" placeholder="Your message of support..." rows="4"></textarea>
+
+      <button type="submit">Donate Now</button>
+    </form>
+  </section>
+
   <footer>
     <p>&copy; 2025 Gen Z Water Movement. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
 
 
 
