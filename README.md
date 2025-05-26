@@ -1,271 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Gen Z Water Campaign - Bringing Clean Water to Communities in Need" />
-  <meta name="author" content="Charity Water Gen Z Team" />
-  <meta name="keywords" content="clean water, Gen Z, charity, nonprofit, donation, water crisis">
-  <title>Gen Z Water Campaign</title>
-  <style>
-    :root {
-      --jerry-yellow: #ffc907;
-      --deep-black: #000000;
-      --clean-white: #ffffff;
-      --hope-blue: #00a6fb;
-      --warm-beige: #f5f1e7;
-      --sky-blue: #e3f4ff;
-      --charcoal: #333333;
-    }
+# 🌊 Gen Z Water Campaign
 
-    html {
-      scroll-behavior: smooth;
-    }
+**Empowering Gen Z to bring clean water to communities in need.**
 
-    * {
-      box-sizing: border-box;
-    }
+This project is a campaign website built with HTML and CSS that raises awareness and encourages donations for the global water crisis. Inspired by Charity: Water and designed for a modern audience, especially Gen Z.
 
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: var(--clean-white);
-      color: var(--charcoal);
-      line-height: 1.6;
-    }
+---
 
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: var(--clean-white);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      border-bottom: 1px solid #ccc;
-      z-index: 999;
-    }
+## 🔗 Live Site
 
-    .nav-left img {
-      height: 40px;
-    }
+👉 [Click here to view the website](https://your-username.github.io/your-repo-name/)
 
-    .nav-links a {
-      color: var(--charcoal);
-      text-decoration: none;
-      font-weight: bold;
-      margin-left: 1rem;
-    }
+> ⚠️ Replace the link above with your actual GitHub Pages link.
 
-    header.hero {
-      background: url('images/heroimage5.jpg') center/cover no-repeat, url('images/background-overlay.jpg') center/cover no-repeat;
-      background-blend-mode: overlay;
-      color: var(--charcoal);
-      text-align: center;
-      padding: 5rem 2rem;
-      animation: fadeIn 2s ease-in;
-    }
+---
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+## 📸 Features
 
-    .hero-content {
-      background: rgba(255, 255, 255, 0.85);
-      display: inline-block;
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 600px;
-      animation: slideUp 2s ease-in-out;
-    }
+- Hero section with Gen Z-focused messaging
+- Clean and modern UI
+- Animated scroll and hero fade-in effects
+- Gallery of real impact photos
+- Donation form with thank-you message popup
+- Mobile responsive layout
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+---
 
-    h1, h2 {
-      font-size: 2.5rem;
-    }
+## 💡 Tech Stack
 
-    h3 {
-      font-size: 1.8rem;
-    }
+- HTML5
+- CSS3 (including animations)
+- No frameworks or JavaScript libraries
+- GitHub Pages for hosting
 
-    p {
-      font-size: 1.2rem;
-    }
+---
 
-    .cta-button {
-      background-color: var(--jerry-yellow);
-      color: var(--deep-black);
-      padding: 1rem 2rem;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 0.5rem;
-      display: inline-block;
-      margin-top: 1rem;
-      transition: background 0.3s;
-    }
+## 🙌 How to Use
 
-    .cta-button:hover {
-      background-color: #e6b800;
-    }
+1. Clone or fork this repo.
+2. Make edits to `index.html` or images as needed.
+3. Commit and push to GitHub.
+4. Enable GitHub Pages under your repo's settings.
+5. Share the link!
 
-    section {
-      padding: 4rem 2rem;
-      background-color: var(--warm-beige);
-    }
+---
 
-    .impact-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
+## 📥 Contributions
 
-    .card {
-      background: var(--clean-white);
-      padding: 1.5rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      max-width: 300px;
-      text-align: center;
-      transition: transform 0.3s;
-    }
+Want to contribute ideas, designs, or improvements? Feel free to fork and submit a pull request!
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+---
 
-    form {
-      max-width: 600px;
-      margin: 2rem auto;
-      background: var(--clean-white);
-      padding: 2rem;
-      border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
+## 🧠 Inspiration
 
-    form label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-    }
+This campaign is modeled after [charity: water](https://www.charitywater.org/) and aims to empower young people to take action through digital platforms.
 
-    form input, form textarea {
-      width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1.2rem;
-      border: 1px solid #ccc;
-      border-radius: 0.5rem;
-    }
+---
 
-    form input[type="email"] {
-      background-color: #f9fbff;
-      border: 1px solid var(--hope-blue);
-    }
+## 📄 License
 
-    form button {
-      width: 100%;
-      background-color: var(--jerry-yellow);
-      color: var(--deep-black);
-      padding: 1rem;
-      font-size: 1rem;
-      font-weight: bold;
-      border: none;
-      border-radius: 0.5rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
+This project is open-source and free to use for educational and nonprofit purposes.
 
-    form button:hover {
-      background-color: #e6b800;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: var(--hope-blue);
-      color: var(--clean-white);
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        margin-top: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-      }
-
-      h1 { font-size: 1.8rem; }
-      p { font-size: 1rem; }
-      .hero-content { padding: 1.5rem; }
-      .impact-cards { flex-direction: column; align-items: center; }
-    }
-  </style>
-</head>
-<body>
-  <nav>
-    <div class="nav-left">
-      <img src="images/logoimage.jpg" alt="Charity Water Logo">
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#impact">Impact</a>
-      <a href="#donate">Donate</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="hero-content">
-      <h1>Gen Z Leads, Clean Water Succeeds.</h1>
-      <p>Clean water heals, protects, and grows. Gen Z makes sure it flows.</p>
-      <a href="#donate" class="cta-button">Join Gen Z's Fight for Water Now!</a>
-    </div>
-  </header>
-
-  <section id="gallery">
-    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Our Work in Action</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-      <img src="images/heroimage5.jpg" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-      <img src="images/heroimage1.jpg" alt="Youth engaging in water project" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-      <img src="images/heroimage4.jpg" alt="Celebrating clean water access" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-    </div>
-  </section>
-
-  <section id="donate">
-    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Make a Donation</h2>
-    <form>
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-
-      <label for="amount">Donation Amount ($)</label>
-      <input type="number" id="amount" name="amount" placeholder="e.g. 50" required />
-
-      <label for="message">Message (Optional)</label>
-      <textarea id="message" name="message" placeholder="Your message of support..." rows="4"></textarea>
-
-      <button type="submit">Donate Now</button>
-    </form>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Gen Z Water Movement. All rights reserved.</p>
-  </footer>
-</body>
-</html>
 
 
 
