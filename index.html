@@ -1,231 +1,300 @@
-<style>
-  :root {
-    --jerry-yellow: #ffd700;
-    --jerry-gradient: linear-gradient(45deg, #ffd700, #f4c400);
-    --deep-black: #000000;
-    --clean-white: #ffffff;
-    --hope-blue: #00a6fb;
-    --sky-blue: #e3f4ff;
-    --charcoal: #333333;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: var(--sky-blue);
-    color: var(--deep-black);
-  }
-
-  h1, h2, h3 {
-    color: var(--hope-blue);
-  }
-
-  h2::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--jerry-yellow);
-    margin: 0.5rem auto;
-    border-radius: 2px;
-  }
-
-  nav {
-    background: var(--clean-white);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    border-bottom: 2px solid var(--hope-blue);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-
-  .nav-links a {
-    color: var(--deep-black);
-    margin-left: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover {
-    color: var(--jerry-yellow);
-  }
-
-  header.hero {
-    background: url('images/heroimage5.jpg') center/cover no-repeat;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    padding-top: 70px;
-    animation: ripple 15s infinite linear;
-  }
-
-  @keyframes ripple {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
-  }
-
-  .bubble-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: 0;
-  }
-
-  .bubble {
-    position: absolute;
-    bottom: -100px;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    animation: floatUp 6s infinite ease-in;
-  }
-
-  @keyframes floatUp {
-    to {
-      transform: translateY(-120vh);
-      opacity: 0;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gen Z Water Campaign - Bringing Clean Water to Communities in Need" />
+  <meta name="author" content="Charity Water Gen Z Team" />
+  <meta name="keywords" content="clean water, Gen Z, charity, nonprofit, donation, water crisis">
+  <title>Gen Z Water Campaign</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --jerry-yellow: #ffc907;
+      --deep-black: #000000;
+      --clean-white: #ffffff;
+      --hope-blue: #00a6fb;
+      --sky-blue: #e3f4ff;
+      --charcoal: #333333;
     }
-  }
+    html { scroll-behavior: smooth; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: url('images/background-texture.jpg') center/cover no-repeat fixed;
+      color: var(--deep-black);
+      line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--clean-white);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 2px solid var(--hope-blue);
+      z-index: 999;
+    }
+    .nav-links a {
+      color: var(--deep-black);
+      text-decoration: none;
+      font-weight: bold;
+      margin-left: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+    .nav-links a:hover, .nav-links a:focus, .nav-links a:active {
+      color: var(--hope-blue);
+      border-bottom: 2px solid var(--hope-blue);
+    }
+    header.hero {
+      background: url('images/heroimage5.jpg') center/cover no-repeat;
+      color: var(--charcoal);
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+      border-bottom: 5px solid var(--hope-blue);
+    }
+    .hero-content {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 600px;
+      border: 3px solid var(--jerry-yellow);
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    section {
+      padding: 4rem 2rem;
+      background-color: rgba(255, 255, 255, 0.85);
+      border-top: 5px solid var(--jerry-yellow);
+    }
+    .impact-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .card {
+      background: var(--clean-white);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      max-width: 320px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border-top: 4px solid var(--hope-blue);
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+    }
+    .counter {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--hope-blue);
+    }
+    .cta-button, form button {
+      background-color: var(--jerry-yellow);
+      color: var(--deep-black);
+      padding: 1rem 2rem;
+      font-weight: bold;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      border: none;
+      cursor: pointer;
+    }
+    .cta-button:hover, form button:hover {
+      background-color: var(--hope-blue);
+      color: var(--clean-white);
+      transform: scale(1.05);
+    }
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      background: var(--clean-white);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border: 2px solid var(--hope-blue);
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+    }
+    form input[type="email"] {
+      background-color: #f9fbff;
+      border: 1px solid var(--hope-blue);
+    }
+    .video-section {
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border: none;
+      border-radius: 1rem;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--hope-blue);
+      color: var(--clean-white);
+      border-top: 5px solid var(--jerry-yellow);
+      font-size: 0.95rem;
+    }
+    .floating-donate {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      background-color: var(--jerry-yellow);
+      color: var(--deep-black);
+      padding: 1rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.5rem;
+      z-index: 1000;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+    }
+    .floating-donate:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        margin-top: 0.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      h1 { font-size: 1.8rem; }
+      p { font-size: 1rem; }
+      .hero-content { padding: 1.5rem; }
+      .impact-cards { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <img src="images/logoimage.jpg" alt="Charity Water Logo">
+    </div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#video">Video</a>
+      <a href="#impact">Impact</a>
+      <a href="#donate">Donate</a>
+    </div>
+  </nav>
 
-  .hero-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 2rem;
-    border-radius: 1rem;
-    max-width: 600px;
-    text-align: center;
-    border: 3px solid var(--jerry-yellow);
-    position: relative;
-    z-index: 2;
-  }
+  <header class="hero" id="home">
+    <div class="hero-content">
+      <h1>Gen Z Leads, Clean Water Succeeds.</h1>
+      <p>Clean water heals, protects, and grows. Gen Z makes sure it flows.</p>
+      <a href="#donate" class="cta-button">Join Gen Z's Fight for Water Now!</a>
+    </div>
+  </header>
 
-  .cta-button {
-    background: var(--jerry-gradient);
-    color: var(--deep-black);
-    padding: 1rem 2rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease-in-out;
-    display: inline-block;
-    border: none;
-  }
+  <section id="gallery">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Our Work in Action</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
+      <img src="images/heroimage5.jpg" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <img src="images/heroimage1.jpg" alt="Youth engaging in water project" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+      <img src="images/heroimage4.jpg" alt="Celebrating clean water access" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
+    </div>
+  </section>
 
-  .cta-button:hover {
-    background-color: var(--hope-blue);
-    color: var(--clean-white);
-  }
+  <section id="video" class="video-section">
+    <h2>Watch Our Mission in Action</h2>
+    <iframe src="https://www.youtube.com/embed/bdBG5VO01e0?autoplay=1&mute=1" title="Gen Z Water Campaign Video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </section>
 
-  section {
-    padding: 4rem 2rem;
-    background-color: var(--clean-white);
-    border-top: 5px solid var(--jerry-yellow);
-  }
+  <section id="impact">
+    <h2 style="text-align:center;">Our Impact</h2>
+    <div class="impact-cards">
+      <div class="card">
+        <p class="counter" data-target="12000">0</p>
+        <p>People Helped</p>
+      </div>
+      <div class="card">
+        <p class="counter" data-target="300">0</p>
+        <p>Wells Built</p>
+      </div>
+      <div class="card">
+        <p class="counter" data-target="500">0</p>
+        <p>Volunteers</p>
+      </div>
+    </div>
+  </section>
 
-  .impact-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
+  <section id="donate">
+    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Make a Donation</h2>
+    <form onsubmit="event.preventDefault(); alert('Thank you for your donation!');">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
 
-  .card {
-    background: var(--clean-white);
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    text-align: center;
-    border-top: 4px solid var(--hope-blue);
-    transition: transform 0.3s;
-  }
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required />
 
-  .card:hover {
-    transform: translateY(-8px);
-  }
+      <label for="amount">Donation Amount ($)</label>
+      <input type="number" id="amount" name="amount" placeholder="e.g. 50" required />
 
-  .card i {
-    font-size: 2rem;
-    color: var(--jerry-yellow);
-    margin-bottom: 1rem;
-    display: block;
-  }
+      <label for="message">Message (Optional)</label>
+      <textarea id="message" name="message" placeholder="Your message of support..." rows="4"></textarea>
 
-  .counter {
-    font-size: 2rem;
-    font-weight: bold;
-    color: var(--hope-blue);
-  }
+      <button type="submit">Donate Now</button>
+    </form>
+  </section>
 
-  .map-section {
-    background-color: var(--sky-blue);
-    padding: 4rem 2rem;
-    text-align: center;
-  }
+  <div class="floating-donate">
+    <a href="#donate" style="color: inherit;"><i class="fas fa-hand-holding-water"></i></a>
+  </div>
 
-  .map-section iframe {
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    border: none;
-    border-radius: 1rem;
-    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-  }
+  <footer>
+    <p>&copy; 2025 Gen Z Water Movement. All rights reserved.</p>
+  </footer>
 
-  .testimonials {
-    background-color: var(--clean-white);
-    padding: 4rem 2rem;
-    text-align: center;
-  }
+  <script>
+    const counterElements = document.querySelectorAll('.counter');
+    const animationSpeed = 200;
 
-  .testimonial {
-    font-style: italic;
-    margin: 1rem auto;
-    max-width: 600px;
-    color: var(--charcoal);
-  }
+    counterElements.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const inc = target / animationSpeed;
 
-  .testimonial::before, .testimonial::after {
-    content: '“';
-    font-size: 2rem;
-    color: var(--hope-blue);
-  }
-
-  .floating-donate {
-    position: fixed;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    background-color: var(--jerry-yellow);
-    color: var(--deep-black);
-    padding: 1rem;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 1.5rem;
-    z-index: 1000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-  }
-
-  .floating-donate:hover {
-    transform: scale(1.1);
-  }
-
-  footer {
-    background-color: var(--hope-blue);
-    color: var(--clean-white);
-    text-align: center;
-    padding: 2rem;
-    border-top: 5px solid var(--jerry-yellow);
-  }
-</style>
+        if (count < target) {
+          counter.innerText = Math.ceil(count + inc);
+          setTimeout(updateCount, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  </script>
+</body>
+</html>
 
 
