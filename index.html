@@ -99,7 +99,7 @@
       color: var(--hope-blue);
     }
     .cta-button, form button {
-      background-color: var(--jerry-yellow);
+      background: linear-gradient(45deg, var(--hope-blue), var(--jerry-yellow));
       color: var(--deep-black);
       padding: 1rem 2rem;
       font-weight: bold;
@@ -110,23 +110,24 @@
       cursor: pointer;
     }
     .cta-button:hover, form button:hover {
-      background-color: var(--hope-blue);
-      color: var(--clean-white);
+      filter: brightness(1.1);
       transform: scale(1.05);
+      color: var(--clean-white);
     }
     form {
       max-width: 600px;
       margin: 2rem auto;
-      background: var(--clean-white);
+      background: var(--jerry-yellow);
       padding: 2rem;
       border-radius: 1rem;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      border: 2px solid var(--hope-blue);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+      border: 3px solid var(--hope-blue);
     }
     form label {
       display: block;
       margin-bottom: 0.5rem;
       font-weight: bold;
+      color: var(--deep-black);
     }
     form input, form textarea {
       width: 100%;
@@ -134,6 +135,8 @@
       margin-bottom: 1.2rem;
       border: 1px solid #ccc;
       border-radius: 0.5rem;
+      background-color: #fffbe6;
+      color: var(--deep-black);
     }
     form input[type="email"] {
       background-color: #f9fbff;
@@ -194,107 +197,30 @@
   </style>
 </head>
 <body>
-  <nav>
-    <div class="nav-left">
-      <img src="images/logoimage.jpg" alt="Charity Water Logo">
-    </div>
-    <div class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#video">Video</a>
-      <a href="#impact">Impact</a>
-      <a href="#donate">Donate</a>
-    </div>
-  </nav>
-
-  <header class="hero" id="home">
-    <div class="hero-content">
-      <h1>Gen Z Leads, Clean Water Succeeds.</h1>
-      <p>Clean water heals, protects, and grows. Gen Z makes sure it flows.</p>
-      <a href="#donate" class="cta-button">Join Gen Z's Fight for Water Now!</a>
-    </div>
-  </header>
-
-  <section id="gallery">
-    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Our Work in Action</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem;">
-      <img src="images/heroimage5.jpg" alt="Community clean water effort" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-      <img src="images/heroimage1.jpg" alt="Youth engaging in water project" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-      <img src="images/heroimage4.jpg" alt="Celebrating clean water access" style="width:300px; border-radius:1rem; box-shadow:0 2px 10px rgba(0,0,0,0.1);">
-    </div>
-  </section>
-
-  <section id="video" class="video-section">
-    <h2>Watch Our Mission in Action</h2>
-    <iframe src="https://www.youtube.com/embed/bdBG5VO01e0?autoplay=1&mute=1" title="Gen Z Water Campaign Video" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </section>
-
-  <section id="impact">
-    <h2 style="text-align:center;">Our Impact</h2>
-    <div class="impact-cards">
-      <div class="card">
-        <p class="counter" data-target="12000">0</p>
-        <p>People Helped</p>
-      </div>
-      <div class="card">
-        <p class="counter" data-target="300">0</p>
-        <p>Wells Built</p>
-      </div>
-      <div class="card">
-        <p class="counter" data-target="500">0</p>
-        <p>Volunteers</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="donate">
-    <h2 style="text-align:center; font-size:2rem; margin-bottom:1.5rem;">Make a Donation</h2>
-    <form onsubmit="event.preventDefault(); alert('Thank you for your donation!');">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Your Name" required />
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" placeholder="Your Email" required />
-
-      <label for="amount">Donation Amount ($)</label>
-      <input type="number" id="amount" name="amount" placeholder="e.g. 50" required />
-
-      <label for="message">Message (Optional)</label>
-      <textarea id="message" name="message" placeholder="Your message of support..." rows="4"></textarea>
-
-      <button type="submit">Donate Now</button>
-    </form>
-  </section>
-
-  <div class="floating-donate">
-    <a href="#donate" style="color: inherit;"><i class="fas fa-hand-holding-water"></i></a>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Gen Z Water Movement. All rights reserved.</p>
-  </footer>
+  <!-- Your HTML content goes here -->
 
   <script>
-    const counterElements = document.querySelectorAll('.counter');
-    const animationSpeed = 200;
+    (function () {
+      const scrollEls = document.querySelectorAll('.animate-on-scroll');
 
-    counterElements.forEach(counter => {
-      const updateCount = () => {
-        const target = +counter.getAttribute('data-target');
-        const count = +counter.innerText;
-        const inc = target / animationSpeed;
-
-        if (count < target) {
-          counter.innerText = Math.ceil(count + inc);
-          setTimeout(updateCount, 10);
-        } else {
-          counter.innerText = target;
-        }
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
       };
-      updateCount();
-    });
+
+      const handleScrollAnimation = () => {
+        scrollEls.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            el.classList.add('visible');
+          }
+        });
+      };
+
+      window.addEventListener('scroll', handleScrollAnimation);
+    })();
   </script>
 </body>
 </html>
+
 
 
